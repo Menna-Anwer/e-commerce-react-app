@@ -8,22 +8,28 @@ const brandReducer = (state = inital, action) => {
         return{
             ...state,
             brand:action.payload,
-            loading:false
+            loading:false,
+            error:null
         }
         case"Get-Brand":
         return{
+            ...state,
             brand:action.payload,
-            loading:false
+            loading:false,
+            error:null
         }
         case"Create-Brands":
         return{
+            ...state,
             brand:action.payload,
-            loading:false
+            loading:false,
+            error:null
         }
         case"Get-Error":
         return{
-            loading:true,
-            brand:action.payload,
+            ...state,
+            loading:false,
+            error:action.payload?.message || 'Request failed',
         }
         default:
             return state;
