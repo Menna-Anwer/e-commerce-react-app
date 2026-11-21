@@ -5,7 +5,7 @@ import { useInsertDataWithImg } from '../../Hook/useInsertData';
 import { useUpdateDataWithImg } from '../../Hook/useUpdateData';
 
 
-export const getAllCategories = (limit, page) => async (dispatch) => {
+export const getAllCategories = (limit = 12, page = 1) => async (dispatch) => {
   try {
     const res = await useGetData(`/api/v1/categories?limit=${limit}&page=${page}`)
     dispatch({
