@@ -2,7 +2,7 @@ import useGetData from '../../Hook/useGetData';
 import { useInsertDataWithImg } from '../../Hook/useInsertData';
 
 
-export const getAllBrands=(limit) => async(dispatch)=>{
+export const getAllBrands=(limit = 12) => async(dispatch)=>{
     try{
       const res = await useGetData(`/api/v1/brands?limit=${limit}`)
       dispatch({
