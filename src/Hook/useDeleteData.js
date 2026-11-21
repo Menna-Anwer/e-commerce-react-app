@@ -4,7 +4,7 @@ const useDeleteData = async (url, psrams) => {
     const config = {
         headers: { "Content-Type": "multipart/form-data" }
     }
-    const res = await baseURL.delete(url, psrams, config)
+    const res = await baseURL.delete(url, { ...config, data: psrams })
     return res.data;
 }
 export default useDeleteData;
