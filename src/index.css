@@ -689,3 +689,8 @@ body {
   .slider-title { font-size: 18px; line-height: 26px; }
   .slider-text { font-size: 21px; line-height: 32px; margin-bottom: 0; }
                 }
+
+@media (max-width: 575.98px) {
+  .discount-backcolor { height: auto; min-height: 130px; padding: 16px 8px; row-gap: 12px; }
+  .dicount-img { display: block; margin: 0 auto; max-width: 100%; width: auto; height: auto; }
+}
