@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import ApiStatus from './Components/ApiStatus';
 import HomePage from './Page/Home/HomePage';
 import LoginPage from './Page/Auth/LoginPage';
 import RegisterPage from './Page/Auth/RegisterPage';
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ApiStatus />
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
