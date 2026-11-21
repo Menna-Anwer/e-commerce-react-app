@@ -7,18 +7,23 @@ const subCategoryReducer = (state = inital, action) => {
     switch(action.type){
         case"Create-Sub-Category":
         return{
+            ...state,
             subCategory:action.payload,
-            loading:false
+            loading:false,
+            error:null
         }
         case"Get-Sub-Category":
         return{
+            ...state,
             subCategory:action.payload,
-            loading:false
+            loading:false,
+            error:null
         }
         case"Get-Error":
         return{
-            loading:true,
-            subCategory:action.payload,
+            ...state,
+            loading:false,
+            error:action.payload?.message || 'Request failed',
         }
         default:
             return state;
