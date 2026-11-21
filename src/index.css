@@ -674,3 +674,18 @@ body {
   position: absolute;
   z-index: -1;
 }
+/* Keep the existing promotion readable on narrow screens. */
+@media (max-width: 575.98px) {
+  .carousel-item > .d-flex {
+    flex-direction: column !important;
+    min-height: 310px;
+    padding: 16px 32px 28px;
+  }
+  .carousel-item img {
+    width: min(100%, 240px) !important;
+    height: 180px !important;
+    object-fit: contain;
+  }
+  .slider-title { font-size: 18px; line-height: 26px; }
+  .slider-text { font-size: 21px; line-height: 32px; margin-bottom: 0; }
+                }
