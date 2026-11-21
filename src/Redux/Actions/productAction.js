@@ -19,7 +19,7 @@ export const createProduct = (formData) => async (dispatch) => {
   }
 };
 
-export const getAllProducts = (limit,page) => async (dispatch) => {
+export const getAllProducts = (limit = 12, page = 1) => async (dispatch) => {
   try {
     const res = await useGetData(`/api/v1/products?limit=${limit}&page=${page}`);
     dispatch({
