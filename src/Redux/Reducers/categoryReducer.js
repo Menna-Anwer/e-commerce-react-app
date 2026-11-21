@@ -13,34 +13,42 @@ const categoryReducer = (state = inital, action) => {
             return {
                 ...state,
                 allCategories: action.payload,
-                loading: false
+                loading: false,
+                error: null
             }
         case "Get-Category":
             return {
+                ...state,
                 oneCategory: action.payload,
-                loading: false
+                loading: false,
+                error: null
             }
         case "Create-Categories":
             return {
+                ...state,
                 category: action.payload,
-                loading: false
+                loading: false,
+                error: null
             }
         case "Update-Category":
             return {
                 ...state,
                 updateCategory: action.payload,
                 loading: false,
+        error: null,
             }
         case "Delete-Category":
             return {
                 ...state,
                 category: action.payload,
                 loading: false,
+        error: null,
             }
         case "Get-Error":
             return {
-                loading: true,
-                category: action.payload,
+                ...state,
+                loading: false,
+        error: action.payload?.message || 'Request failed',
             }
         default:
             return state;
