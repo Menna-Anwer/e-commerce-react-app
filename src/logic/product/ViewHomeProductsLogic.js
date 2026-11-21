@@ -8,9 +8,9 @@ const ViewHomeProductsLogic = () => {
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
-  const dataProducts = useSelector((state) => state.products.product);
+  const dataProducts = useSelector((state) => state.products.allProducts);
   const loading = useSelector((state) => state.products.loading);
-  if (dataProducts.data) {
+  if (dataProducts?.data) {
     allProducts=dataProducts.data.slice(0, 4);
 
     
